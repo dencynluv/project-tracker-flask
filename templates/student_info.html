@@ -7,5 +7,18 @@
     <h1>{{ first }} {{ last }}</h1>
 
     <p>GitHub Account: {{ github }}</p>
+
+<!-- For every project in our projects list of tuples
+    project title is the first item in the tuple 
+    grade is the second item in the tuple -->
+    <ul>
+    {% for project in projects %}
+        <li>
+            Project Title: {{ project[0] }}
+        <br> 
+            Grade: {{ project[1] }}
+        </li>
+    {% endfor%}
+    </ul>
 </body>
 </html>

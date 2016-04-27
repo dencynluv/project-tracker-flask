@@ -93,10 +93,10 @@ def get_grades_by_github(github):
         WHERE student_github = :github
         """
     db_cursor = db.session.execute(QUERY, {'github': github})
-    rows = db_cursor.fetchall()
-    for row in rows:
-        print "Student %s received grade of %s for project %s" % (
-            github, row[1], row[0])
+    rows = db_cursor.fetchall() #list of tuples [(project_title, grade)]
+    # for row in rows:
+    #     print "Student %s received grade of %s for project %s" % (
+    #         github, row[1], row[0])
     return rows
 
 def get_grades_by_title(title):
